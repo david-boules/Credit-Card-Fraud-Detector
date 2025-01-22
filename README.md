@@ -8,6 +8,9 @@ Credit card fraud detection can help prevent financial loss for individual consu
 ---
 
 ## Dataset Description
+
+[Link to Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/data)
+
 ### Key Information
 The dataset contains transactions made by European cardholders over two days in September of 2013, reaching a total of 284,807 transactions. The data was collected by Worldline and the Machine Learning Group of ULB (Université Libre de Bruxelles)
 
