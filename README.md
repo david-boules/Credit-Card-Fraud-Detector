@@ -2,6 +2,7 @@
 This project focuses on detecting fraudulent credit card transactions using machine learning.
 
 Credit card fraud detection is a classical Classification machine learning project and is highly relevant and important in the real world. According to Merchant Cost Consulting, digital transactions represent larger prooprtions of all in-person transactions globally year on year, with cash transactions representing just 16% of all in-person transactions, as of December 2024.
+
 Credit card fraud detection can help prevent financial loss for individual consumers and organizations alike and enhance security in digital transaction systems, which is the motivation for this project.
 
 ---
@@ -14,10 +15,11 @@ The dataset was transformed using Principal Component Analysis (PCA) for the pur
 
 ### Dataset Features
 - The dataset is highly imbalanced, where only 492 transactions are fraud, accoutning for only 0.172% of all transactions in this dataset.
+    - Such imbalanced data can lead to classifiers being biased toward the majority class (which is non-fraudulent transactions); this would lead to a classifier achieving a high accuracy by predicting all transactions as **non-fraud**, but this **_would not help identify fraud transactions_**
 - Due to confidentiality requirements, the majority of features do not represent a tangible, physical quantity, as the variables: V1, V2,..., V28 represent 28 variables that are a result of PCA transformation.
 - Two infromative features exist:
-    1) Amount - the transaction amount
-    2) Time - the seconds elapsed between each transaction and the first transaction in the dataset
+    1. Amount - the transaction amount
+    2. Time - the seconds elapsed between each transaction and the first transaction in the dataset
 
 As a result of the massive class imbalance, oversampling and undersampling techniques must be used, either individually or in combination. Additionally, typical measures of 'accuracy' may not be informative, which calls for using other measures such as ROC AUC curve.
 
@@ -34,10 +36,16 @@ As a result of the massive class imbalance, oversampling and undersampling techn
 3. **Phase 3**: Model Building & Evaluation
    - Train different models (e.g., Logistic Regression, Random Forest, KNN, SVM)
      - (K-Means Clustering may be used as a baseline)
-   - Use cross-validation for performance evaluation with metrics like Recall and ROC-AUC
+   - Use cross-validation for performance evaluation with metrics such as the following:
+       - Precision
+       - Recall
+       - F1-Score
+       - ROC-AUC
+       - PR-AUC
+       - Specificity
    - Conduct hyperparameter tuning to improve model performance and avoid overfitting (e.g., Grid Search, Random Search, Bayesian Optimization)
 4. **Phase 4**: Results Analysis & Insights
-   - Compare models based on various metrics
+   - Compare models using various metrics
    - Identify trade-offs between false positives and false negatives
    
 ---
