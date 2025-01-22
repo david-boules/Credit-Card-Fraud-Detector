@@ -15,7 +15,9 @@ The dataset was transformed using Principal Component Analysis (PCA) for the pur
 ### Dataset Features
 - The dataset is highly imbalanced, where only 492 transactions are fraud, accoutning for only 0.172% of all transactions in this dataset.
 - Due to confidentiality requirements, the majority of features do not represent a tangible, physical quantity, as the variables: V1, V2,..., V28 represent 28 variables that are a result of PCA transformation.
-- Two infromative features exist: 1) Amount - the transaction amount, 2) Time - the seconds elapsed between each transaction and the first transaction in the dataset
+- Two infromative features exist:
+    1) Amount - the transaction amount
+    2) Time - the seconds elapsed between each transaction and the first transaction in the dataset
 
 As a result of the massive class imbalance, oversampling and undersampling techniques must be used, either individually or in combination. Additionally, typical measures of 'accuracy' may not be informative, which calls for using other measures such as ROC AUC curve.
 
@@ -31,7 +33,7 @@ As a result of the massive class imbalance, oversampling and undersampling techn
    - Prepare data for model building (e.g., feature scaling, handling outliers)
 3. **Phase 3**: Model Building & Evaluation
    - Train different models (e.g., Logistic Regression, Random Forest, KNN, SVM)
-     - K-Means Clustering may be used as a baseline
+     - (K-Means Clustering may be used as a baseline)
    - Use cross-validation for performance evaluation with metrics like Recall and ROC-AUC
    - Conduct hyperparameter tuning to improve model performance and avoid overfitting (e.g., Grid Search, Random Search, Bayesian Optimization)
 4. **Phase 4**: Results Analysis & Insights
