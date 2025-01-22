@@ -9,20 +9,18 @@ Credit card fraud detection can help prevent financial loss for individual consu
 
 ## Dataset Description
 ### Key Information
-The dataset contains transactions made by European cardholders over two days in September of 2013, reaching a total of 284,807 transactions. The data was collected by Wordline and the Machine Learning Group of ULB (Université Libre de Bruxelles)
+The dataset contains transactions made by European cardholders over two days in September of 2013, reaching a total of 284,807 transactions. The data was collected by Worldline and the Machine Learning Group of ULB (Université Libre de Bruxelles)
 
 The dataset was transformed using Principal Component Analysis (PCA) for the purpose of ensuring anonymity in this dataset by hiding identifiable information of various credit card users and to aid in dimensionality reduction and feature transformation for machine learning pipelines
 
 ### Dataset Features
-- The dataset is highly imbalanced, where only 492 transactions are fraud, accoutning for only 0.172% of all transactions in this dataset.
-    - Such imbalanced data can lead to classifiers being biased toward the majority class (which is non-fraudulent transactions); this would lead to a classifier achieving a high accuracy by predicting all transactions as **non-fraud**, but this **_would not help identify fraud transactions_**
+- The dataset is highly imbalanced, where only 492 transactions are fraud, accounting for only 0.172% of all transactions in this dataset.
+    - Such imbalanced data can lead to classifiers being biased toward the majority class (which is non-fraudulent transactions); this would lead to a classifier achieving a high accuracy by predicting all transactions as **non-fraud**, but this **_would not help identify fraud transactions_**, therefore 'accuracy' is likely uninformative
 - Due to confidentiality requirements, the majority of features do not represent a tangible, physical quantity, as the variables: V1, V2,..., V28 represent 28 variables that are a result of PCA transformation.
 - Two infromative features exist:
-    1. Amount - the transaction amount
-    2. Time - the seconds elapsed between each transaction and the first transaction in the dataset
-
-As a result of the massive class imbalance, oversampling and undersampling techniques must be used, either individually or in combination. Additionally, typical measures of 'accuracy' may not be informative, which calls for using other measures such as ROC AUC curve.
-
+    1. Amount - Transaction amount, potentially indicating the severity of a fraud case
+    2. Time - Seconds elapsed between the first transaction and the current one, which may capture temporal patterns in fraudulent activity
+ 
 ---
 
 ## Project Timeline
@@ -34,7 +32,7 @@ As a result of the massive class imbalance, oversampling and undersampling techn
    - Explore feature importance
    - Prepare data for model building (e.g., feature scaling, handling outliers)
 3. **Phase 3**: Model Building & Evaluation
-   - Train different models (e.g., Logistic Regression, Random Forest, KNN, SVM)
+   - Train different models (e.g., Logistic Regression, Random Forest, KNN, SVM & Gradient Boosting classifiers)
      - (K-Means Clustering may be used as a baseline)
    - Use cross-validation for performance evaluation with metrics such as the following:
        - Precision
